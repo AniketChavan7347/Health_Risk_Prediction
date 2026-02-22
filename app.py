@@ -5,7 +5,7 @@ import pandas as pd
 import plotly.express as px
 
 
-model = joblib.load(open("Healthcare Risk_predict.pkl", "rb"))
+model = joblib.load(open("healthcare_risk_predict.pkl", "rb"))
 encoders = joblib.load(open("Label_encoders.pkl", "rb"))
 
 st.title("🩺 Health Risk Predictor")
@@ -100,4 +100,5 @@ if st.button("Predict Risk"):
         labels={"x": "Factors", "y": "Value"},
         title="Your Lifestyle Factors"
     )
+
     st.plotly_chart(bar_fig)
